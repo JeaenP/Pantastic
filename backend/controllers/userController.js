@@ -72,30 +72,36 @@ const registerUser = async (req, res) => {
 // Google login
 const googleLogin = async (req, res) => {
     const { tokenId } = req.body;
+
     try {
+        const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
         const ticket = await client.verifyIdToken({
             idToken: tokenId,
             audience: process.env.GOOGLE_CLIENT_ID,
         });
-        const { name, email, sub: googleId } = ticket.getPayload();
+
+        const payload = ticket.getPayload();
+        const { email, name, picture } = payload;
 
         let user = await userModel.findOne({ email });
-        if (user) {
-            const token = createToken(user._id);
-            return res.json({ success: true, token });
-        } else {
-            const newUser = new userModel({
-                name: name,
-                email: email,
-                password: googleId,
+
+        if (!user) {
+            user = new userModel({
+                name,
+                email,
+                password: '',
+                googleId: payload.sub,
+                imageUrl: picture, 
             });
-            user = await newUser.save();
-            const token = createToken(user._id);
-            return res.json({ success: true, token });
+            await user.save();
         }
+
+        const token = createToken(user._id);
+
+        res.json({ success: true, token, profileImageUrl: picture }); 
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error al iniciar sesión con Google" });
+        res.json({ success: false, message: "Error en la autenticación con Google" });
     }
 };
 
