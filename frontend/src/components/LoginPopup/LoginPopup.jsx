@@ -6,7 +6,7 @@ import axios from "axios";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const LoginPopup = ({ setShowLogin }) => {
-    const { url, setToken } = useContext(StoreContext);
+    const { url, setToken, setProfileImageUrl } = useContext(StoreContext);
     const [currState, setCurrState] = useState("Login");
     const [data, setData] = useState({
         name: "",
@@ -45,14 +45,20 @@ const LoginPopup = ({ setShowLogin }) => {
             const googleData = {
                 tokenId: response.credential,
             };
-
+    
             const newUrl = `${url}/api/user/googlelogin`;
-
+    
             const res = await axios.post(newUrl, googleData);
-
+    
             if (res.data.success) {
                 setToken(res.data.token);
                 localStorage.setItem("token", res.data.token);
+                
+                // Extrae la imagen de perfil de la respuesta y guárdala en el contexto
+                const profileImage = res.data.profileImageUrl; // Asegúrate de que el backend envía esta información
+                setProfileImageUrl(profileImage);
+                localStorage.setItem("profileImageUrl", profileImage);
+    
                 setShowLogin(false);
             } else {
                 alert(res.data.message);
