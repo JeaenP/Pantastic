@@ -66,3 +66,9 @@
     font-weight: 500;
     cursor: pointer;
 }
+.google-login-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
