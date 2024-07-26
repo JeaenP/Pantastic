@@ -23,8 +23,8 @@ const upload = multer({
     key: (req, file, cb) => {
       cb(null, Date.now().toString() + '-' + file.originalname);
     },
-    contentDisposition: 'inline', // Intenta establecer esto explícitamente
-    contentType: multerS3.AUTO_CONTENT_TYPE // Esto configurará automáticamente el Content-Type correcto
+    contentDisposition: 'inline', 
+    contentType: multerS3.AUTO_CONTENT_TYPE 
   })
 });
 

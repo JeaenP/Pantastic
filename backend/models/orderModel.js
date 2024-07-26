@@ -13,9 +13,11 @@ const orderSchema = new mongoose.Schema({
       lng: { type: Number, required: true },
     }
   },
-  status: { type: String, default: "Preparando pedido" },
+  status: { type: String, default: "Verificando Pago" },
   date: { type: Date, default: Date.now() },
-  payment: { type: Boolean, default: false }
+  payment: { type: Boolean, default: false },
+  paymentMethod: { type: String, required: true },
+  paymentImage: { type: String }
 });
 
 const orderModel = mongoose.models.order || mongoose.model("order", orderSchema);
