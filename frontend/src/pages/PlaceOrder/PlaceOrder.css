@@ -4,12 +4,12 @@
     align-items: start;
     justify-content: space-between;
     gap: 50px;
+    margin-bottom: 30px;
 }
 
 .place-order-left{
     width: 100%;
     max-width: max(30%, 500px);
-
 }
 
 .place-order-left .title {
@@ -34,9 +34,17 @@
     width: 100%;
     max-width: max(40%, 500px);
 }
-.place-order .cart-total buttom{
+.place-order .cart-total button {
     margin-top: 30px;
+    padding: 10px;
+    background-color: #f8a605;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
 }
+
+
 .address-header {
     display: flex;
     align-items: center;
@@ -44,12 +52,98 @@
     margin-bottom: 10px;
   }
   
-  .address-saved {
+.address-saved {
     display: flex;
     align-items: center;
     color: green;
-  }
+}
 
+.payment-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-option img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.ahorita-container {
+    display: flex;
+}
+
+.ahorita-container hr{
+    margin: 20px;
+}
+
+.ahorita-qr img {
+    width: 210px;
+}
+.qr {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ahorita{
+    text-align: center;
+    font-weight: 300;
+}
+
+.ahorita-link {
+    word-wrap: break-word;
+    white-space: normal;
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.ahorita-qr img {
+    margin-bottom: 10px;
+}
+
+.ahorita-qr a {
+    color: #3366BB;
+}
+
+.add-img-upload {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-img-upload label {
+    cursor: pointer;
+}
+
+.add-img-upload img {
+    width: 150px;
+    border: 1px dashed #c5c5c5;
+    padding: 10px;
+}
+
+
+
+.back-buttom {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    
+}
+.back-button svg {
+    margin-right: 5px;
+}
 
 @media (max-width: 750px) {
     .place-order{
@@ -58,4 +152,12 @@
     .place-order-left{
         justify-content: start;
     }
+    .ahorita-container{
+        flex-direction: column;
+    }
+    .cart-total button{
+        width: 150px;
+    }
+
+    
 }

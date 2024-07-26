@@ -45,20 +45,20 @@ const LoginPopup = ({ setShowLogin }) => {
             const googleData = {
                 tokenId: response.credential,
             };
-    
+
             const newUrl = `${url}/api/user/googlelogin`;
-    
+
             const res = await axios.post(newUrl, googleData);
-    
+
             if (res.data.success) {
                 setToken(res.data.token);
                 localStorage.setItem("token", res.data.token);
-                
+
                 // Extrae la imagen de perfil de la respuesta y guárdala en el contexto
                 const profileImage = res.data.profileImageUrl; // Asegúrate de que el backend envía esta información
                 setProfileImageUrl(profileImage);
                 localStorage.setItem("profileImageUrl", profileImage);
-    
+
                 setShowLogin(false);
             } else {
                 alert(res.data.message);
@@ -93,10 +93,10 @@ const LoginPopup = ({ setShowLogin }) => {
                         <h2>{currState}</h2>
                         <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="" />
                     </div>
-                    
+
                     <div className="login-popup-inputs">
                         {currState === "Login" ? <></> : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder="Nombre" required />}
-                        <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder="Correo Electronico" required />
+                        <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder="Correo Electrónico" required />
                         <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder="Contraseña" required />
                     </div>
                     <button type="submit">{currState === "Sign Up" ? "Unirse" : "Ingresar"}</button>
@@ -111,13 +111,13 @@ const LoginPopup = ({ setShowLogin }) => {
                             )
                         }
                     </div>
-                    <GoogleLogin
-                        onSuccess={responseGoogle}
-                        onError={() => {
-                            alert('Login Failed');
-                        }}
-                        className="google-login-button"
-                    />
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                        <GoogleLogin
+                            onSuccess={responseGoogle}
+                            onError={() => alert('Login Failed')}
+                            className="google-login-button"
+                        />
+                    </div>
                     {currState === "Login"
                         ? <p>Registrarse en Pantastic <span onClick={() => setCurrState("Sign Up")}>Click aqui</span></p>
                         : <p>¿Ya esta registrado? <span onClick={() => setCurrState("Login")}>Ingresar aqui</span></p>

@@ -7,9 +7,10 @@
     left: 0;
     padding: 20px 10vw 20px 10vw;
     width: 100%;
-    background-color: #f0f0f0; /* Añade un fondo para que el contenido no se mezcle con el navbar */
-    z-index: 1000; /* Asegúrate de que el navbar esté sobre otros elementos */
-    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1); /* Sombra solo en la parte inferior */
+    background-color: #f7f7f7; 
+    z-index: 1000; 
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1); 
+    
 }
 .navbar .logo{
     width: 150px;
@@ -72,8 +73,9 @@
 }
 .navbar-profile img{
     width: 40px;
-    border-radius: 50px;
-    
+}
+.profile-image img{
+    border-radius:50px;
 }
 .nav-profile-dropdown{
     position: absolute;

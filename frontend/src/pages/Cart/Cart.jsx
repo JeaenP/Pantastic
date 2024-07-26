@@ -1,16 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Cart = () => {
 
     
 
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount,url } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token } = useContext(StoreContext);
 
   const navigate = useNavigate();
+
+  const handleCheckout = (e) => {
+    if (!token) {
+      e.preventDefault();
+      toast.warning("Debe iniciar sesión para realizar pedidos");
+    } else if (getTotalCartAmount() === 0) {
+      e.preventDefault();
+      toast.warning("Elija al menos un producto");
+    } else {
+      navigate('/order');
+    }
+  };
 
   return (
     <div className='cart'>
@@ -30,7 +43,7 @@ const Cart = () => {
             return (
               <div>
                 <div className='cart-items-title cart-items-item'>
-                  <img src={url + "/images/" + item.image} alt="" />
+                  <img src={item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
@@ -64,7 +77,7 @@ const Cart = () => {
               <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
             </div>
           </div>
-          <button onClick = {()=>navigate('/order')}>PROCEDER CON LA COMPRA</button>
+          <button onClick={handleCheckout}>PAGAR</button>
         </div>
         <div className="cart-promocode">
           <div>
@@ -76,7 +89,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
+    
   )
 }
 

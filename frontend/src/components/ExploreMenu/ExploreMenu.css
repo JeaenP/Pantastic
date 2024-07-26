@@ -1,9 +1,18 @@
+
+
 .explore-menu{
     display: flex;
     gap: 20px;
     flex-direction: column;   
 }
 
+.separator{
+    display: flex;
+    justify-content: center;
+}
+.separator img{
+    width: max(40%, 300px);
+}
 .explore-menu h1{
     color: #262626;
     font-weight: 500;

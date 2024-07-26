@@ -4,10 +4,18 @@ import shopping_cart_icon from './shopping_cart_icon.png'
 import menu1 from './menu1.png'
 import menu2 from './menu2.png'
 import menu3 from './menu3.png'
-import menu4 from './menu4.png'
 import menu5 from './menu5.png'
 import menu6 from './menu6.png'
 import menu7 from './menu7.png'
+import club1 from './club1.png'
+import club2 from './club2.png'
+import club3 from './club3.png'
+import club5 from './club5.png'
+import club6 from './club6.png'
+import club7 from './club7.png'
+import separator from './separator.png'
+import separatorLeft from './separatorLeft.png'
+import separatorRight from './separatorRigth.png'
 import facebook_icon from './facebook_icon.png'
 import instagram_icon from './instagram_icon.png'
 import instagram_more_info from './instagram_more_info.png'
@@ -23,6 +31,10 @@ import logout_icon from './logout_icon.png'
 import profile_icon from './profile_icon.png'
 import shopping_cart_dropdown_icon from './shopping_cart_dropdown_icon.png'
 import parcel_icon from './parcel_icon.png'
+import ahorita from './ahorita.jpeg'
+import upload_area from './upload_area.png'
+import bl from './bl.png'
+import card from './card.png'
 import hogaza from './hogaza.jpg'
 import hogaza_semillas from './hogaza_semillas.jpg'
 import ciabatta from './ciabatta.jpg'
@@ -35,7 +47,12 @@ import mantequilla_ajos_rostizados from './mantequilla_ajos_rostizados.jpg'
 import mantequilla_avellanada from './mantequilla_avellanada.jpg'
 import cremoso_queso_eneldo from './cremoso_queso_eneldo.jpg'
 import cremoso_queso_frutos_rojos from './cremoso_queso_frutos_rojos.jpg'
-
+import desc from './desc.png'
+import diamond from './diamond.png'
+import heart from './heart.png'
+import point from './point.png'
+import deliver from './deliver.png'
+import gift from './gift.png'
 
 export const assets = {
     logo,
@@ -55,38 +72,53 @@ export const assets = {
     logout_icon,
     profile_icon,
     shopping_cart_dropdown_icon,
-    parcel_icon
+    parcel_icon,
+    ahorita,
+    upload_area,
+    bl,
+    card,
+    separator,
+    separatorLeft,
+    separatorRight,
+    desc,
+    diamond,
+    heart,
+    point,
+    deliver,
+    gift
   
 }
 
 export const menu_list = [
     {
         menu_name: "Pan",
-        menu_image: menu1
+        menu_image: menu1,
+        club_image: club1
     },
     {
         menu_name: "Vino",
-        menu_image: menu2
+        menu_image: menu2,
+        club_image: club2
     },
     {
         menu_name: "Café",
-        menu_image: menu3
-    },
-    {
-        menu_name: "Mermelada",
-        menu_image: menu4
+        menu_image: menu3,
+        club_image: club3
     },
     {
         menu_name: "Aderezos",
-        menu_image: menu5
+        menu_image: menu5,
+        club_image: club5
     },
     {
         menu_name: "Frutos",
-        menu_image: menu6
+        menu_image: menu6,
+        club_image: club6
     },
     {
         menu_name: "Quesos",
-        menu_image: menu7
+        menu_image: menu7,
+        club_image: club7
     }
 ]
 

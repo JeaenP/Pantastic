@@ -2,55 +2,78 @@
     height: 33vw;
     width: 78vw;
     margin: 30px auto;
-    background: url('/header_image2.png') no-repeat;
-    background-size: contain;
     position: relative;
     border-radius: 30px;
     margin-top: 130px;
+    overflow: hidden;
 } 
 
-.header-contents{
+.header-contents {
+    border-radius: 20px;
+    padding: 20px;
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 1.5vw;
     max-width: 60%;
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s;
+    text-align: left;
 }
 
-.header-contents h2{
-    font-weight: 500px;
+.header-contents h2 {
+    font-weight: 500;
     color: white;
-    font-size: max(2.5vw, 14px);
+    font-size: max(2.5vw, 20px);
 }
 
-.header-contents p{
+.header-contents p {
     color: white;
     font-size: 1vw;
 }
 
-.header-contents button{
+.header-contents button {
     border: none;
     color: #747474;
-    font-weight: 500px;
+    font-weight: 700;
     padding: 1vw 2.3vw;
     background-color: white;
     font-size: max(1vw, 13px);
     border-radius: 50px;
 }
 
+.carousel .slide {
+    background: none; /* Elimina el fondo por defecto del carrusel */
+}
+
+.carousel-slide img {
+    border-radius: 30px;
+    height: 33vw;
+    object-fit: cover;
+}
+
 @media (max-width: 1050px) {
-    .header-contents{
+    .header-contents {
         max-width: 45%;
     }
 }
 
 @media (max-width: 750px) {
-    .header-contents{
-        max-width: 65%;
+    .carousel-slide img{
+        border-radius: 0;
+        height: 300px;
+    }
+    .carousel .slide {
+        height: 300px;
+    }
+    .header{
+        border-radius: 0;
+        height: 300px;
+    }
+    .header-contents {
+        max-width: 70%;
     }
     .header-contents p {
         display: none;

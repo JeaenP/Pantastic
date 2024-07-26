@@ -1,0 +1,181 @@
+.clubs {
+    margin-top: 100px;
+    
+}
+
+.title {
+    text-align: center;
+}
+
+.clubs p {
+    margin: 20px 0px 20px 0px;
+}
+
+.clubs h2 {
+    font-size: max(5vw, 20px);
+    margin-bottom: 20px;
+    font-family: "Kaushan Script", cursive;
+    color: #f8a605;
+}
+
+.clubs h3{
+    color: white;
+}
+
+
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .separator-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .separator-content img {
+    width: 500px;
+    max-width: 100%; /* Para que la imagen sea responsiva */
+  }
+
+
+
+
+
+.clubs-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.club-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 90%;
+}
+
+.club-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.club-overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #00000021;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.club-overlay h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.join-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f8a605;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.tutorial {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.tutorial-box{
+    width: 80%;
+    background-color: #323232;
+    height: auto;
+    border-radius: 40px;
+    padding: 20px;
+
+}
+
+.promos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .promo {
+    flex: 1 1 calc(33.333% - 20px);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .promo img{
+    width: 64px;
+  }
+
+.join-link:hover {
+    background-color: #c98e19;
+}
+
+.club-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(7, 7, 7, 0.2);
+}
+
+
+
+@media (max-width: 768px) {
+    .clubs h2 {
+        font-size: 3em;
+    }
+
+    .clubs-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .club-item{
+        height: 280px;
+    }
+
+    @media (max-width: 768px) {
+        .promo {
+          flex: 1 1 40%;
+          font-size: 12px;
+          padding: 0px;
+        }
+        .tutorial-box{
+            width: 100%;
+            border-radius: 0px;
+        }
+        .tutorial-box img{
+            width: 32px;
+          }
+        
+
+      }
+
+}

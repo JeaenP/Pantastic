@@ -8,6 +8,9 @@ import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
+import Clubs from './pages/Clubs/Clubs'
+import ClubDetail from './components/ClubDetail/ClubDetail';
+
 
 const App = () => {
 
@@ -26,6 +29,8 @@ const App = () => {
         <Route path = '/order' element={<PlaceOrder/>} />
         <Route path = '/verify' element={<Verify/>} />
         <Route path = '/myorders' element={<MyOrders/>} />
+        <Route path = '/clubs' element={<Clubs/>} />
+        <Route path= '/clubs/:clubName' element={<ClubDetail />} />
       </Routes>
     </div>
     <Footer/>

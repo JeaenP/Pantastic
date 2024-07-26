@@ -1,6 +1,9 @@
 .my-orders {
     margin: 130px 0px;
 }
+.my-orders h2{
+    font-weight: 500;
+}
 .my-orders .container {
     display:flex;
     flex-direction: column;
@@ -8,7 +11,7 @@
 }
 .my-orders-order{
     display:grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr ;
     align-items: center;
     gap: 30px;
     font-size: 14px;

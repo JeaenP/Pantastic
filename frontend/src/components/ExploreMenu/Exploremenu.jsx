@@ -1,9 +1,13 @@
 import React from 'react'
 import { menu_list } from '../../assets/assets'
 import './ExploreMenu.css'
+import { assets } from '../../assets/assets'
 const Exploremenu = ({category, setCategory}) => {
     return (
         <div className='explore-menu' id='explore-menu'>
+            <div className="separator">
+                <img src={assets.separator} alt="" />
+            </div>
             <h1>Explora nuestras opciones</h1>
             <p className='explore-menu-text'>Elije de entre nuestra gran variedad de productos segun tus preferencias. ¿Que vas a probar primero? </p>
             <div className="explore-menu-list">

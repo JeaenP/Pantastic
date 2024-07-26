@@ -36,12 +36,14 @@
     display:flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 .login-popup-inputs input{
     outline: none;
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
+    
 }
 .login-popup-container button{
     border: none;
@@ -67,8 +69,9 @@
     cursor: pointer;
 }
 .google-login-button {
-    width: 100%;
+    width: 100px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+

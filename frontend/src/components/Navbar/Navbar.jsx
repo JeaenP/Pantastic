@@ -22,22 +22,24 @@ const Navbar = ({ setShowLogin }) => {
         <div className='navbar'>
             <Link to='/'><img src={assets.logo} alt="" className="logo" /></Link>
             <ul className="navbar-menu">
-                <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-                <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-                <a href='#app-download' onClick={() => setMenu("app")} className={menu === "app" ? "active" : ""}>Clubes</a>
+                <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Inicio</Link>
+                <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menú</a>
                 <a href='#footer' onClick={() => setMenu("sobre-nosotros")} className={menu === "sobre-nosotros" ? "active" : ""}>Sobre Nosotros</a>
+                <Link to="/clubs"  onClick={() => setMenu("Clubes y Eventos")} className={menu === "Clubes y Eventos" ? "active" : ""}>Clubes/Eventos</Link>
             </ul>
             <div className="navbar-right">
-                <img src={assets.search_icon} alt=""/>
+                
                 <div className="navbar-search-icon">
                     <Link to='/cart'><img src={assets.shopping_cart_icon} alt=""/></Link>
                     <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
                 </div>
                 {!token ? (
-                    <button onClick={() => setShowLogin(true)}>Sign In</button>
+                    <button onClick={() => setShowLogin(true)}>Iniciar Sesión</button>
                 ) : (
                     <div className="navbar-profile">
+                        <div className="profile-image">
                         <img src={profileImageUrl || assets.profile_icon} alt=""/>
+                        </div>
                         <ul className="nav-profile-dropdown">
                             <li onClick={() => navigate('/myorders')}>  <img src={assets.shopping_cart_dropdown_icon} alt=""/> <p>Pedidos</p> </li>
                             <hr />
