@@ -12,12 +12,20 @@ const Sidebar = () => {
                 <p>Añadir items</p>
             </NavLink>
             <NavLink to='/List' className="sidebar-option">
-                <img src={assets.order_icon} alt="" />
+                <img src={assets.list} alt="" />
                 <p>Listar Items</p>
             </NavLink>
             <NavLink to='/Orders' className="sidebar-option">
                 <img src={assets.order_icon} alt="" />
                 <p>Pedidos</p>
+            </NavLink>
+            <NavLink to='/OrderHistory' className="sidebar-option">
+                <img src={assets.history} alt="" />
+                <p>Historial</p>
+            </NavLink>
+            <NavLink to='/AddEvent' className="sidebar-option">
+                <img src={assets.event} alt="" />
+                <p>Eventos</p>
             </NavLink>
         </div>
       

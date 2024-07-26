@@ -21,8 +21,8 @@
     display: flex;
     gap: 30px;
 }
-.add-category-price slect, .add-category-price input{
-    max-width: 120px;
+.add-category-price select, .add-category-price input{
+    max-width: 140px;
     padding: 10px;
 }
 .add-btn{
@@ -32,5 +32,9 @@
     background-color: black;
     color: white;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
+.add-price input{
+    margin-top: 10px;
+}

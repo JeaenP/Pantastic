@@ -54,7 +54,7 @@ const Add = ({url}) => {
                 <label htmlFor="image">
                     <img src={image?URL.createObjectURL(image):assets.upload_area} alt="" />
                 </label>
-                <input onChange={(e)=>setImage(e.target.files[0])} type="file" id="image" hidden required></input>
+                <input onChange={(e)=>setImage(e.target.files[0])} type="file" hidden required></input>
             </div>
             <div className="add-product-name flex-col">
                 <p>Nombre del producto</p>
@@ -71,7 +71,6 @@ const Add = ({url}) => {
                         <option value="Pan">Pan</option>
                         <option value="Vino">Vino</option>
                         <option value="Café">Café</option>
-                        <option value="Mermelada">Mermelada</option>
                         <option value="Aderezos">Aderezos</option>
                         <option value="Frutos">Frutos</option>
                         <option value="Quesos">Quesos</option>
